@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lissabon · Packliste — Reiseplaner</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="app-header" data-od-id="app-header">
+  <div class="app-header__inner">
+    <a class="brand" href="index.html" data-od-id="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" fill="#FFFFFF"/>
+          <circle cx="12" cy="10" r="2.5" fill="#0F766E"/>
+        </svg>
+      </span>
+      Reiseplaner
+    </a>
+  </div>
+</header>
+
+<main class="container" data-od-id="main">
+  <a class="crumb" href="index.html" data-od-id="crumb-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Meine Reisen
+  </a>
+
+  <div class="trip-hero" data-od-id="trip-hero">
+    <div>
+      <h1 data-od-id="trip-title">Lissabon</h1>
+      <p class="trip-hero__meta" data-od-id="trip-meta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        12. Mai – 19. Mai 2026 · 8 Tage
+      </p>
+    </div>
+    <div class="trip-hero__actions">
+      <a class="btn btn--secondary" href="tagesplan.html" data-od-id="btn-back-tagesplan">Tagesplan</a>
+    </div>
+  </div>
+
+  <nav class="tabs" data-od-id="tabs" aria-label="Reise-Navigation">
+    <a class="tab" href="tagesplan.html" data-od-id="tab-tagesplan">Tagesplan</a>
+    <a class="tab" href="budget.html" data-od-id="tab-budget">Budget</a>
+    <a class="tab tab--active" href="packliste.html" aria-current="page" data-od-id="tab-packliste">Packliste</a>
+  </nav>
+
+  <div class="section" style="margin-top: var(--space-4);">
+    <h2 style="margin-bottom: var(--space-3);" data-od-id="heading-packliste">Packliste</h2>
+
+    <div class="card pack-progress" data-od-id="pack-progress">
+      <div class="pack-progress__head">
+        <span class="progress-label" id="progress-label">3 von 7 gepackt</span>
+        <span class="progress-label" id="progress-percent">43 %</span>
+      </div>
+      <div class="progress"><div class="progress__fill" id="progress-fill" style="width: 42.86%"></div></div>
+    </div>
+
+    <form class="pack-form" id="pack-form" data-od-id="pack-form">
+      <label class="sr-only" for="pack-new">Neuer Eintrag</label>
+      <input class="input" type="text" id="pack-new" placeholder="Neuer Eintrag, z. B. Reiseadapter" autocomplete="off">
+      <button class="btn btn--primary" type="submit" data-od-id="btn-add-item">Hinzufügen</button>
+    </form>
+
+    <div class="pack-list" id="pack-list" data-od-id="pack-list">
+      <div class="pack-item pack-item--done" data-od-id="pack-item-reisepass">
+        <label><input type="checkbox" checked><span>Reisepass</span></label>
+        <button class="icon-btn icon-btn--danger" type="button" data-del aria-label="Eintrag löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <div class="pack-item pack-item--done" data-od-id="pack-item-bordkarten">
+        <label><input type="checkbox" checked><span>Bordkarten &amp; Buchungsunterlagen</span></label>
+        <button class="icon-btn icon-btn--danger" type="button" data-del aria-label="Eintrag löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <div class="pack-item pack-item--done" data-od-id="pack-item-ladegeraet">
+        <label><input type="checkbox" checked><span>Ladegerät &amp; Powerbank</span></label>
+        <button class="icon-btn icon-btn--danger" type="button" data-del aria-label="Eintrag löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <div class="pack-item" data-od-id="pack-item-adapter">
+        <label><input type="checkbox"><span>Reiseadapter</span></label>
+        <button class="icon-btn icon-btn--danger" type="button" data-del aria-label="Eintrag löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <div class="pack-item" data-od-id="pack-item-wanderschuhe">
+        <label><input type="checkbox"><span>Wanderschuhe</span></label>
+        <button class="icon-btn icon-btn--danger" type="button" data-del aria-label="Eintrag löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <div class="pack-item" data-od-id="pack-item-regenjacke">
+        <label><input type="checkbox"><span>Regenjacke</span></label>
+        <button class="icon-btn icon-btn--danger" type="button" data-del aria-label="Eintrag löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <div class="pack-item" data-od-id="pack-item-sonnencreme">
+        <label><input type="checkbox"><span>Sonnencreme</span></label>
+        <button class="icon-btn icon-btn--danger" type="button" data-del aria-label="Eintrag löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+(function () {
+  const list = document.getElementById('pack-list');
+  const fill = document.getElementById('progress-fill');
+  const label = document.getElementById('progress-label');
+  const percent = document.getElementById('progress-percent');
+  const form = document.getElementById('pack-form');
+  const input = document.getElementById('pack-new');
+
+  const trash = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  function update() {
+    const items = Array.from(list.querySelectorAll('.pack-item'));
+    const total = items.length;
+    const done = items.filter(function (it) { return it.querySelector('input').checked; }).length;
+    label.textContent = done + ' von ' + total + ' gepackt';
+    const pct = total ? Math.round((done / total) * 100) : 0;
+    fill.style.width = pct + '%';
+    percent.textContent = pct + ' %';
+  }
+
+  function addItem(name, checked) {
+    const div = document.createElement('div');
+    div.className = 'pack-item' + (checked ? ' pack-item--done' : '');
+    div.innerHTML =
+      '<label><input type="checkbox"' + (checked ? ' checked' : '') + '><span></span></label>' +
+      '<button class="icon-btn icon-btn--danger" type="button" data-del aria-label="Eintrag löschen">' + trash + '</button>';
+    div.querySelector('span').textContent = name;
+    div.querySelector('input').addEventListener('change', function () {
+      div.classList.toggle('pack-item--done', this.checked);
+      update();
+    });
+    div.querySelector('[data-del]').addEventListener('click', function () {
+      div.remove();
+      update();
+    });
+    list.appendChild(div);
+    update();
+  }
+
+  list.querySelectorAll('.pack-item input').forEach(function (cb) {
+    cb.addEventListener('change', function () {
+      cb.closest('.pack-item').classList.toggle('pack-item--done', cb.checked);
+      update();
+    });
+  });
+  list.querySelectorAll('.pack-item [data-del]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      b.closest('.pack-item').remove();
+      update();
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = input.value.trim();
+    if (!name) { input.focus(); return; }
+    addItem(name, false);
+    input.value = '';
+    input.focus();
+  });
+
+  update();
+})();
+</script>
+</body>
+</html>

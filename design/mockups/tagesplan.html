@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lissabon · Tagesplan — Reiseplaner</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="app-header" data-od-id="app-header">
+  <div class="app-header__inner">
+    <a class="brand" href="index.html" data-od-id="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" fill="#FFFFFF"/>
+          <circle cx="12" cy="10" r="2.5" fill="#0F766E"/>
+        </svg>
+      </span>
+      Reiseplaner
+    </a>
+  </div>
+</header>
+
+<main class="container" data-od-id="main">
+  <a class="crumb" href="index.html" data-od-id="crumb-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Meine Reisen
+  </a>
+
+  <div class="trip-hero" data-od-id="trip-hero">
+    <div>
+      <h1 data-od-id="trip-title">Lissabon</h1>
+      <p class="trip-hero__meta" data-od-id="trip-meta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        12. Mai – 19. Mai 2026 · 8 Tage
+      </p>
+    </div>
+    <div class="trip-hero__actions">
+      <button class="btn btn--secondary" id="btn-edit-trip" data-od-id="btn-edit-trip">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4l11-11-4-4L4 16v4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        Bearbeiten
+      </button>
+      <button class="btn btn--danger btn--icon-only" id="btn-delete-trip" aria-label="Reise löschen" data-od-id="btn-delete-trip">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="tabs" data-od-id="tabs" aria-label="Reise-Navigation">
+    <a class="tab tab--active" href="tagesplan.html" aria-current="page" data-od-id="tab-tagesplan">Tagesplan</a>
+    <a class="tab" href="budget.html" data-od-id="tab-budget">Budget</a>
+    <a class="tab" href="packliste.html" data-od-id="tab-packliste">Packliste</a>
+  </nav>
+
+  <div class="section" style="margin-top: var(--space-4);">
+    <div class="row-between" style="margin-bottom: var(--space-3);">
+      <h2 data-od-id="heading-dayplan">Tagesplan</h2>
+      <button class="btn btn--primary" id="btn-add-activity" data-od-id="btn-add-activity">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Aktivität hinzufügen
+      </button>
+    </div>
+
+    <div id="day-list" data-od-id="day-list">
+      <section class="day" data-day="1" data-od-id="day-1">
+        <div class="day__head">
+          <h3 class="day__title">Tag 1 · Dienstag, 12. Mai 2026</h3>
+          <span class="day__total" data-total>35,00 €</span>
+        </div>
+        <div class="activity-list">
+          <div class="activity card" data-cost="0">
+            <span class="activity__time">10:15</span>
+            <div class="activity__body">
+              <p class="activity__name">Check-in im Hotel</p>
+              <div class="activity__meta">
+                <span class="activity__meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>Hotel Alfama Riverside</span>
+                <span class="badge">Sonstiges</span>
+                <span class="activity__cost">0,00 €</span>
+              </div>
+            </div>
+            <div class="activity__actions">
+              <button class="icon-btn" data-edit aria-label="Aktivität bearbeiten"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4l11-11-4-4L4 16v4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+              <button class="icon-btn icon-btn--danger" data-del aria-label="Aktivität löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+          <div class="activity card" data-cost="35">
+            <span class="activity__time">19:30</span>
+            <div class="activity__body">
+              <p class="activity__name">Abendessen im Bairro Alto</p>
+              <div class="activity__meta">
+                <span class="activity__meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>Bairro Alto</span>
+                <span class="badge">Essen &amp; Trinken</span>
+                <span class="activity__cost">35,00 €</span>
+              </div>
+            </div>
+            <div class="activity__actions">
+              <button class="icon-btn" data-edit aria-label="Aktivität bearbeiten"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4l11-11-4-4L4 16v4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+              <button class="icon-btn icon-btn--danger" data-del aria-label="Aktivität löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="day" data-day="2" data-od-id="day-2">
+        <div class="day__head">
+          <h3 class="day__title">Tag 2 · Mittwoch, 13. Mai 2026</h3>
+          <span class="day__total" data-total>13,00 €</span>
+        </div>
+        <div class="activity-list">
+          <div class="activity card" data-cost="3">
+            <span class="activity__time">09:00</span>
+            <div class="activity__body">
+              <p class="activity__name">Tram 28 durch die Altstadt</p>
+              <div class="activity__meta">
+                <span class="activity__meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>Martim Moniz</span>
+                <span class="badge">Transport</span>
+                <span class="activity__cost">3,00 €</span>
+              </div>
+            </div>
+            <div class="activity__actions">
+              <button class="icon-btn" data-edit aria-label="Aktivität bearbeiten"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4l11-11-4-4L4 16v4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+              <button class="icon-btn icon-btn--danger" data-del aria-label="Aktivität löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+          <div class="activity card" data-cost="10">
+            <span class="activity__time">14:00</span>
+            <div class="activity__body">
+              <p class="activity__name">Castelo de São Jorge</p>
+              <div class="activity__meta">
+                <span class="activity__meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>Alfama</span>
+                <span class="badge">Aktivitäten</span>
+                <span class="activity__cost">10,00 €</span>
+              </div>
+            </div>
+            <div class="activity__actions">
+              <button class="icon-btn" data-edit aria-label="Aktivität bearbeiten"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4l11-11-4-4L4 16v4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+              <button class="icon-btn icon-btn--danger" data-del aria-label="Aktivität löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="day" data-day="3" data-od-id="day-3">
+        <div class="day__head">
+          <h3 class="day__title">Tag 3 · Donnerstag, 14. Mai 2026</h3>
+          <span class="day__total" data-total>28,00 €</span>
+        </div>
+        <div class="activity-list">
+          <div class="activity card" data-cost="12">
+            <span class="activity__time">09:30</span>
+            <div class="activity__body">
+              <p class="activity__name">Mosteiro dos Jerónimos</p>
+              <div class="activity__meta">
+                <span class="activity__meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>Belém</span>
+                <span class="badge">Aktivitäten</span>
+                <span class="activity__cost">12,00 €</span>
+              </div>
+            </div>
+            <div class="activity__actions">
+              <button class="icon-btn" data-edit aria-label="Aktivität bearbeiten"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4l11-11-4-4L4 16v4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+              <button class="icon-btn icon-btn--danger" data-del aria-label="Aktivität löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+          <div class="activity card" data-cost="8">
+            <span class="activity__time">13:00</span>
+            <div class="activity__body">
+              <p class="activity__name">Pastéis de Belém</p>
+              <div class="activity__meta">
+                <span class="activity__meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>Rua de Belém 84–92</span>
+                <span class="badge">Essen &amp; Trinken</span>
+                <span class="activity__cost">8,00 €</span>
+              </div>
+            </div>
+            <div class="activity__actions">
+              <button class="icon-btn" data-edit aria-label="Aktivität bearbeiten"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4l11-11-4-4L4 16v4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+              <button class="icon-btn icon-btn--danger" data-del aria-label="Aktivität löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+          <div class="activity card" data-cost="8">
+            <span class="activity__time">16:00</span>
+            <div class="activity__body">
+              <p class="activity__name">Torre de Belém</p>
+              <div class="activity__meta">
+                <span class="activity__meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>Belém</span>
+                <span class="badge">Aktivitäten</span>
+                <span class="activity__cost">8,00 €</span>
+              </div>
+            </div>
+            <div class="activity__actions">
+              <button class="icon-btn" data-edit aria-label="Aktivität bearbeiten"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4l11-11-4-4L4 16v4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+              <button class="icon-btn icon-btn--danger" data-del aria-label="Aktivität löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="day" data-day="4" data-od-id="day-4">
+        <div class="day__head">
+          <h3 class="day__title">Tag 4 · Freitag, 15. Mai 2026</h3>
+          <span class="day__total" data-total>25,00 €</span>
+        </div>
+        <div class="activity-list">
+          <div class="activity card" data-cost="25">
+            <span class="activity__time">08:30</span>
+            <div class="activity__body">
+              <p class="activity__name">Tagesausflug nach Sintra</p>
+              <div class="activity__meta">
+                <span class="activity__meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>Sintra</span>
+                <span class="badge">Aktivitäten</span>
+                <span class="activity__cost">25,00 €</span>
+              </div>
+            </div>
+            <div class="activity__actions">
+              <button class="icon-btn" data-edit aria-label="Aktivität bearbeiten"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4l11-11-4-4L4 16v4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+              <button class="icon-btn icon-btn--danger" data-del aria-label="Aktivität löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="day" data-day="5" data-od-id="day-5">
+        <div class="day__head">
+          <h3 class="day__title">Tag 5 · Samstag, 16. Mai 2026</h3>
+          <span class="day__total" data-total>0,00 €</span>
+        </div>
+        <div class="activity-list">
+          <p class="day__empty">Keine Aktivitäten geplant</p>
+        </div>
+      </section>
+
+      <section class="day" data-day="6" data-od-id="day-6">
+        <div class="day__head">
+          <h3 class="day__title">Tag 6 · Sonntag, 17. Mai 2026</h3>
+          <span class="day__total" data-total>19,00 €</span>
+        </div>
+        <div class="activity-list">
+          <div class="activity card" data-cost="19">
+            <span class="activity__time">11:00</span>
+            <div class="activity__body">
+              <p class="activity__name">Oceanário de Lisboa</p>
+              <div class="activity__meta">
+                <span class="activity__meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>Parque das Nações</span>
+                <span class="badge">Aktivitäten</span>
+                <span class="activity__cost">19,00 €</span>
+              </div>
+            </div>
+            <div class="activity__actions">
+              <button class="icon-btn" data-edit aria-label="Aktivität bearbeiten"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4l11-11-4-4L4 16v4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+              <button class="icon-btn icon-btn--danger" data-del aria-label="Aktivität löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="day" data-day="7" data-od-id="day-7">
+        <div class="day__head">
+          <h3 class="day__title">Tag 7 · Montag, 18. Mai 2026</h3>
+          <span class="day__total" data-total>0,00 €</span>
+        </div>
+        <div class="activity-list">
+          <p class="day__empty">Keine Aktivitäten geplant</p>
+        </div>
+      </section>
+
+      <section class="day" data-day="8" data-od-id="day-8">
+        <div class="day__head">
+          <h3 class="day__title">Tag 8 · Dienstag, 19. Mai 2026</h3>
+          <span class="day__total" data-total>0,00 €</span>
+        </div>
+        <div class="activity-list">
+          <div class="activity card" data-cost="0">
+            <span class="activity__time">12:00</span>
+            <div class="activity__body">
+              <p class="activity__name">Check-out</p>
+              <div class="activity__meta">
+                <span class="activity__meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>Hotel Alfama Riverside</span>
+                <span class="badge">Sonstiges</span>
+                <span class="activity__cost">0,00 €</span>
+              </div>
+            </div>
+            <div class="activity__actions">
+              <button class="icon-btn" data-edit aria-label="Aktivität bearbeiten"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4l11-11-4-4L4 16v4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+              <button class="icon-btn icon-btn--danger" data-del aria-label="Aktivität löschen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<!-- Dialog: Aktivität -->
+<div class="modal-overlay" id="modal-activity" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="activity-title">
+    <div class="modal__head">
+      <h2 class="modal__title" id="activity-title">Aktivität hinzufügen</h2>
+      <button class="icon-btn modal__close" type="button" data-close aria-label="Schließen">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <form id="form-activity" novalidate>
+      <div class="field">
+        <label class="field__label" for="act-day">Tag</label>
+        <select class="input" id="act-day">
+          <option value="1">Tag 1 · 12. Mai 2026</option>
+          <option value="2">Tag 2 · 13. Mai 2026</option>
+          <option value="3">Tag 3 · 14. Mai 2026</option>
+          <option value="4">Tag 4 · 15. Mai 2026</option>
+          <option value="5">Tag 5 · 16. Mai 2026</option>
+          <option value="6">Tag 6 · 17. Mai 2026</option>
+          <option value="7">Tag 7 · 18. Mai 2026</option>
+          <option value="8">Tag 8 · 19. Mai 2026</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="field__label" for="act-time">Uhrzeit</label>
+        <input class="input" type="time" id="act-time" required>
+        <p class="field-error" id="err-time" hidden>Bitte gib eine Uhrzeit an.</p>
+      </div>
+      <div class="field">
+        <label class="field__label" for="act-name">Aktivität</label>
+        <input class="input" type="text" id="act-name" placeholder="z. B. Museum besuchen" required>
+        <p class="field-error" id="err-name" hidden>Bitte benenne die Aktivität.</p>
+      </div>
+      <div class="field">
+        <label class="field__label" for="act-location">Ort</label>
+        <input class="input" type="text" id="act-location" placeholder="z. B. Alfama">
+      </div>
+      <div class="field">
+        <label class="field__label" for="act-cost">Kosten (€)</label>
+        <input class="input" type="number" id="act-cost" min="0" step="0.01" placeholder="0" value="0">
+        <p class="field-error" id="err-cost" hidden>Bitte gib einen gültigen Betrag ein.</p>
+      </div>
+      <div class="field">
+        <label class="field__label" for="act-category">Kategorie</label>
+        <select class="input" id="act-category">
+          <option>Unterkunft</option>
+          <option>Transport</option>
+          <option>Essen &amp; Trinken</option>
+          <option selected>Aktivitäten</option>
+          <option>Sonstiges</option>
+        </select>
+      </div>
+      <div class="modal__actions">
+        <button class="btn btn--secondary" type="button" data-close>Abbrechen</button>
+        <button class="btn btn--primary" type="submit" id="btn-save-activity">Speichern</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Dialog: Reise bearbeiten -->
+<div class="modal-overlay" id="modal-edit-trip" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="edit-trip-title">
+    <div class="modal__head">
+      <h2 class="modal__title" id="edit-trip-title">Reise bearbeiten</h2>
+      <button class="icon-btn modal__close" type="button" data-close aria-label="Schließen">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <form id="form-edit-trip" novalidate>
+      <div class="field">
+        <label class="field__label" for="edit-ziel">Ziel</label>
+        <input class="input" type="text" id="edit-ziel" value="Lissabon" required>
+        <p class="field-error" id="err-edit-ziel" hidden>Bitte gib ein Ziel an.</p>
+      </div>
+      <div class="field">
+        <label class="field__label" for="edit-start">Startdatum</label>
+        <input class="input" type="date" id="edit-start" value="2026-05-12" required>
+      </div>
+      <div class="field">
+        <label class="field__label" for="edit-end">Enddatum</label>
+        <input class="input" type="date" id="edit-end" value="2026-05-19" required>
+        <p class="field-error" id="err-edit-end" hidden>Das Enddatum liegt vor dem Startdatum. Bitte korrigieren.</p>
+      </div>
+      <div class="modal__actions">
+        <button class="btn btn--secondary" type="button" data-close>Abbrechen</button>
+        <button class="btn btn--primary" type="submit">Speichern</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Dialog: Reise löschen -->
+<div class="modal-overlay" id="modal-delete-trip" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="delete-trip-title">
+    <div class="modal__head">
+      <h2 class="modal__title" id="delete-trip-title">Reise löschen?</h2>
+      <button class="icon-btn modal__close" type="button" data-close aria-label="Schließen">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <p>„Lissabon“ wird samt zugehöriger Aktivitäten und Packlisteneinträge dauerhaft entfernt.</p>
+    <div class="modal__actions">
+      <button class="btn btn--secondary" type="button" data-close>Abbrechen</button>
+      <button class="btn btn--danger" type="button" id="btn-confirm-delete-trip">Löschen</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  function euro(n) {
+    return n.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+  }
+  function recalc(day) {
+    let sum = 0;
+    day.querySelectorAll('.activity').forEach(function (a) {
+      sum += Number(a.getAttribute('data-cost')) || 0;
+    });
+    day.querySelector('[data-total]').textContent = euro(sum);
+  }
+
+  const modalActivity = document.getElementById('modal-activity');
+  const modalEdit = document.getElementById('modal-edit-trip');
+  const modalDelete = document.getElementById('modal-delete-trip');
+  const formActivity = document.getElementById('form-activity');
+  const titleActivity = document.getElementById('activity-title');
+
+  function openModal(modal) {
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(modal) {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+  function closeAll() {
+    closeModal(modalActivity); closeModal(modalEdit); closeModal(modalDelete);
+  }
+  document.querySelectorAll('[data-close]').forEach(function (b) {
+    b.addEventListener('click', closeAll);
+  });
+  [modalActivity, modalEdit, modalDelete].forEach(function (m) {
+    m.addEventListener('click', function (e) { if (e.target === m) closeModal(m); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeAll();
+  });
+
+  /* --- Activity add / edit / delete --- */
+  const errTime = document.getElementById('err-time');
+  const errName = document.getElementById('err-name');
+  const errCost = document.getElementById('err-cost');
+  let editingActivity = null;
+
+  function clearActivityErrors() {
+    [errTime, errName, errCost].forEach(function (e) { e.hidden = true; });
+    ['act-time', 'act-name', 'act-cost'].forEach(function (id) {
+      document.getElementById(id).classList.remove('input--error');
+    });
+  }
+  function markErr(input, err) { input.classList.add('input--error'); err.hidden = false; }
+
+  const pin = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>';
+  const pencil = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4l11-11-4-4L4 16v4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>';
+  const trash = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  function buildActivity(name, time, location, cost, category) {
+    const div = document.createElement('div');
+    div.className = 'activity card';
+    div.setAttribute('data-cost', cost);
+    div.innerHTML =
+      '<span class="activity__time"></span>' +
+      '<div class="activity__body">' +
+        '<p class="activity__name"></p>' +
+        '<div class="activity__meta">' +
+          (location ? '<span class="activity__meta-item">' + pin + '<span class="loc"></span></span>' : '') +
+          '<span class="badge"></span>' +
+          '<span class="activity__cost"></span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="activity__actions">' +
+        '<button class="icon-btn" data-edit aria-label="Aktivität bearbeiten">' + pencil + '</button>' +
+        '<button class="icon-btn icon-btn--danger" data-del aria-label="Aktivität löschen">' + trash + '</button>' +
+      '</div>';
+    div.querySelector('.activity__time').textContent = time;
+    div.querySelector('.activity__name').textContent = name;
+    if (location) div.querySelector('.loc').textContent = location;
+    div.querySelector('.badge').textContent = category;
+    div.querySelector('.activity__cost').textContent = euro(cost);
+    div.querySelector('[data-edit]').addEventListener('click', function () { openEdit(div); });
+    div.querySelector('[data-del]').addEventListener('click', function () {
+      const day = div.closest('.day');
+      div.remove();
+      syncEmpty(day);
+      recalc(day);
+    });
+    return div;
+  }
+
+  function syncEmpty(day) {
+    const list = day.querySelector('.activity-list');
+    const hasActivity = list.querySelector('.activity');
+    const empty = list.querySelector('.day__empty');
+    if (hasActivity && empty) empty.remove();
+    if (!hasActivity && !empty) {
+      const p = document.createElement('p');
+      p.className = 'day__empty';
+      p.textContent = 'Keine Aktivitäten geplant';
+      list.appendChild(p);
+    }
+  }
+
+  function insertSorted(list, el) {
+    const time = el.querySelector('.activity__time').textContent;
+    const items = Array.from(list.querySelectorAll('.activity'));
+    let before = null;
+    for (const it of items) {
+      if (it.querySelector('.activity__time').textContent > time) { before = it; break; }
+    }
+    if (before) list.insertBefore(el, before);
+    else list.appendChild(el);
+  }
+
+  document.getElementById('btn-add-activity').addEventListener('click', function () {
+    editingActivity = null;
+    titleActivity.textContent = 'Aktivität hinzufügen';
+    formActivity.reset();
+    document.getElementById('act-cost').value = '0';
+    clearActivityErrors();
+    openModal(modalActivity);
+    document.getElementById('act-name').focus();
+  });
+
+  function openEdit(el) {
+    editingActivity = el;
+    titleActivity.textContent = 'Aktivität bearbeiten';
+    const day = el.closest('.day');
+    document.getElementById('act-day').value = day.getAttribute('data-day');
+    document.getElementById('act-time').value = el.querySelector('.activity__time').textContent;
+    document.getElementById('act-name').value = el.querySelector('.activity__name').textContent;
+    const locEl = el.querySelector('.loc');
+    document.getElementById('act-location').value = locEl ? locEl.textContent : '';
+    document.getElementById('act-cost').value = el.getAttribute('data-cost');
+    document.getElementById('act-category').value = el.querySelector('.badge').textContent;
+    clearActivityErrors();
+    openModal(modalActivity);
+  }
+
+  document.getElementById('day-list').querySelectorAll('[data-edit]').forEach(function (b) {
+    b.addEventListener('click', function () { openEdit(b.closest('.activity')); });
+  });
+  document.getElementById('day-list').querySelectorAll('[data-del]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      const el = b.closest('.activity');
+      const day = el.closest('.day');
+      el.remove();
+      syncEmpty(day);
+      recalc(day);
+    });
+  });
+
+  formActivity.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearActivityErrors();
+    const timeInput = document.getElementById('act-time');
+    const nameInput = document.getElementById('act-name');
+    const costInput = document.getElementById('act-cost');
+    const locationInput = document.getElementById('act-location');
+    const categoryInput = document.getElementById('act-category');
+    const dayVal = document.getElementById('act-day').value;
+
+    const time = timeInput.value;
+    const name = nameInput.value.trim();
+    const costRaw = costInput.value.trim();
+    const location = locationInput.value.trim();
+    const category = categoryInput.value;
+
+    let valid = true;
+    if (!time) { markErr(timeInput, errTime); valid = false; }
+    if (!name) { markErr(nameInput, errName); valid = false; }
+    let cost = 0;
+    if (costRaw !== '') {
+      cost = Number(costRaw);
+      if (!Number.isFinite(cost) || cost < 0) { markErr(costInput, errCost); valid = false; }
+    }
+    if (!valid) return;
+
+    const day = document.querySelector('.day[data-day="' + dayVal + '"]');
+
+    if (editingActivity) {
+      const wasDay = editingActivity.closest('.day');
+      editingActivity.setAttribute('data-cost', cost);
+      editingActivity.querySelector('.activity__time').textContent = time;
+      editingActivity.querySelector('.activity__name').textContent = name;
+      editingActivity.querySelector('.badge').textContent = category;
+      editingActivity.querySelector('.activity__cost').textContent = euro(cost);
+      const locEl = editingActivity.querySelector('.loc');
+      const metaWrap = editingActivity.querySelector('.activity__meta');
+      if (location) {
+        if (locEl) locEl.textContent = location;
+        else metaWrap.insertBefore(Object.assign(document.createElement('span'), { className: 'activity__meta-item', innerHTML: pin + '<span class="loc"></span>' }), metaWrap.querySelector('.badge'));
+      } else if (locEl) {
+        locEl.closest('.activity__meta-item').remove();
+      }
+      if (wasDay !== day) {
+        day.querySelector('.activity-list').appendChild(editingActivity);
+        syncEmpty(day);
+        syncEmpty(wasDay);
+        recalc(wasDay);
+      }
+      const list = day.querySelector('.activity-list');
+      syncEmpty(day);
+      insertSorted(list, editingActivity);
+      recalc(day);
+    } else {
+      const el = buildActivity(name, time, location, cost, category);
+      const list = day.querySelector('.activity-list');
+      insertSorted(list, el);
+      syncEmpty(day);
+      recalc(day);
+    }
+    closeModal(modalActivity);
+  });
+
+  /* --- Trip edit / delete --- */
+  document.getElementById('btn-edit-trip').addEventListener('click', function () {
+    openModal(modalEdit);
+  });
+  document.getElementById('form-edit-trip').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const ziel = document.getElementById('edit-ziel');
+    const start = document.getElementById('edit-start');
+    const end = document.getElementById('edit-end');
+    const errZiel = document.getElementById('err-edit-ziel');
+    const errEnd = document.getElementById('err-edit-end');
+    ziel.classList.remove('input--error'); errZiel.hidden = true;
+    end.classList.remove('input--error'); errEnd.hidden = true;
+
+    let valid = true;
+    if (!ziel.value.trim()) { ziel.classList.add('input--error'); errZiel.hidden = false; valid = false; }
+    if (start.value && end.value && end.value < start.value) { end.classList.add('input--error'); errEnd.hidden = false; valid = false; }
+    if (!valid) return;
+
+    document.getElementById('trip-title').textContent = ziel.value.trim();
+    const d1 = new Date(start.value + 'T00:00:00');
+    const d2 = new Date(end.value + 'T00:00:00');
+    const days = Math.round((d2 - d1) / 86400000) + 1;
+    const fmt = function (iso) { const d = new Date(iso + 'T00:00:00'); return d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' }); };
+    const meta = document.getElementById('trip-meta');
+    meta.childNodes[meta.childNodes.length - 1].textContent = fmt(start.value) + ' – ' + fmt(end.value) + ' · ' + days + ' Tage';
+    document.title = ziel.value.trim() + ' · Tagesplan — Reiseplaner';
+    closeModal(modalEdit);
+  });
+
+  document.getElementById('btn-delete-trip').addEventListener('click', function () {
+    openModal(modalDelete);
+  });
+  document.getElementById('btn-confirm-delete-trip').addEventListener('click', function () {
+    window.location.href = 'index.html';
+  });
+})();
+</script>
+</body>
+</html>

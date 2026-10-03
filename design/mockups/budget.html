@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lissabon · Budget — Reiseplaner</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="app-header" data-od-id="app-header">
+  <div class="app-header__inner">
+    <a class="brand" href="index.html" data-od-id="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" fill="#FFFFFF"/>
+          <circle cx="12" cy="10" r="2.5" fill="#0F766E"/>
+        </svg>
+      </span>
+      Reiseplaner
+    </a>
+  </div>
+</header>
+
+<main class="container" data-od-id="main">
+  <a class="crumb" href="index.html" data-od-id="crumb-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Meine Reisen
+  </a>
+
+  <div class="trip-hero" data-od-id="trip-hero">
+    <div>
+      <h1 data-od-id="trip-title">Lissabon</h1>
+      <p class="trip-hero__meta" data-od-id="trip-meta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        12. Mai – 19. Mai 2026 · 8 Tage
+      </p>
+    </div>
+    <div class="trip-hero__actions">
+      <a class="btn btn--secondary" href="tagesplan.html" data-od-id="btn-back-tagesplan">Tagesplan</a>
+    </div>
+  </div>
+
+  <nav class="tabs" data-od-id="tabs" aria-label="Reise-Navigation">
+    <a class="tab" href="tagesplan.html" data-od-id="tab-tagesplan">Tagesplan</a>
+    <a class="tab tab--active" href="budget.html" aria-current="page" data-od-id="tab-budget">Budget</a>
+    <a class="tab" href="packliste.html" data-od-id="tab-packliste">Packliste</a>
+  </nav>
+
+  <div class="section" style="margin-top: var(--space-4);">
+    <h2 style="margin-bottom: var(--space-3);" data-od-id="heading-budget">Budget-Übersicht</h2>
+
+    <div class="budget-total" data-od-id="budget-total">
+      <span class="budget-total__label">Gesamtsumme</span>
+      <span class="budget-total__value">1.300,00 €</span>
+    </div>
+
+    <div class="card" data-od-id="budget-breakdown">
+      <div class="budget-row" data-od-id="budget-row-unterkunft">
+        <div class="budget-row__head">
+          <span class="budget-row__label">Unterkunft</span>
+          <span class="budget-row__value">620,00 €</span>
+        </div>
+        <div class="budget-bar"><div class="budget-bar__fill" style="width: 100%"></div></div>
+      </div>
+      <div class="budget-row" data-od-id="budget-row-essen">
+        <div class="budget-row__head">
+          <span class="budget-row__label">Essen &amp; Trinken</span>
+          <span class="budget-row__value">310,00 €</span>
+        </div>
+        <div class="budget-bar"><div class="budget-bar__fill" style="width: 50%"></div></div>
+      </div>
+      <div class="budget-row" data-od-id="budget-row-aktivitaeten">
+        <div class="budget-row__head">
+          <span class="budget-row__label">Aktivitäten</span>
+          <span class="budget-row__value">180,00 €</span>
+        </div>
+        <div class="budget-bar"><div class="budget-bar__fill" style="width: 29.03%"></div></div>
+      </div>
+      <div class="budget-row" data-od-id="budget-row-transport">
+        <div class="budget-row__head">
+          <span class="budget-row__label">Transport</span>
+          <span class="budget-row__value">130,00 €</span>
+        </div>
+        <div class="budget-bar"><div class="budget-bar__fill" style="width: 20.97%"></div></div>
+      </div>
+      <div class="budget-row" data-od-id="budget-row-sonstiges">
+        <div class="budget-row__head">
+          <span class="budget-row__label">Sonstiges</span>
+          <span class="budget-row__value">60,00 €</span>
+        </div>
+        <div class="budget-bar"><div class="budget-bar__fill" style="width: 9.68%"></div></div>
+      </div>
+    </div>
+
+    <p class="muted small" style="margin-top: var(--space-3);" data-od-id="budget-note">
+      Die Balkenlängen sind proportional zum größten Kategoriewert. Die Übersicht aktualisiert sich automatisch, sobald du im Tagesplan Aktivitäten anlegst, änderst oder löschst.
+    </p>
+  </div>
+</main>
+</body>
+</html>

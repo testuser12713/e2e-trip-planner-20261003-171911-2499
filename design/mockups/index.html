@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meine Reisen — Reiseplaner</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="app-header" data-od-id="app-header">
+  <div class="app-header__inner">
+    <a class="brand" href="index.html" data-od-id="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" fill="#FFFFFF"/>
+          <circle cx="12" cy="10" r="2.5" fill="#0F766E"/>
+        </svg>
+      </span>
+      Reiseplaner
+    </a>
+  </div>
+</header>
+
+<main class="container" data-od-id="main">
+  <div class="page-head" data-od-id="page-head">
+    <div>
+      <h1 data-od-id="heading-trips">Meine Reisen</h1>
+      <p class="muted">Plane Tage, Budget und Packliste für deine nächsten Reisen.</p>
+    </div>
+    <button class="btn btn--primary" id="btn-new-trip" data-od-id="btn-new-trip">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Neue Reise
+    </button>
+  </div>
+
+  <div class="trip-grid" id="trip-list" data-od-id="trip-list">
+    <article class="card trip-card" data-od-id="trip-card-lissabon">
+      <a class="trip-card__link" href="tagesplan.html" data-od-id="trip-link-lissabon">
+        <h3 class="trip-card__title">Lissabon</h3>
+        <p class="trip-card__dates">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          12. Mai – 19. Mai 2026
+        </p>
+        <div class="trip-card__meta">
+          <span class="badge">8 Tage</span>
+          <span class="badge">12 Aktivitäten</span>
+        </div>
+      </a>
+      <button class="icon-btn icon-btn--danger trip-card__delete" type="button" data-delete="Lissabon" aria-label="Reise „Lissabon“ löschen">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </article>
+
+    <article class="card trip-card" data-od-id="trip-card-island">
+      <a class="trip-card__link" href="tagesplan.html" data-od-id="trip-link-island">
+        <h3 class="trip-card__title">Island-Roadtrip</h3>
+        <p class="trip-card__dates">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          03. August – 15. August 2026
+        </p>
+        <div class="trip-card__meta">
+          <span class="badge">13 Tage</span>
+          <span class="badge">21 Aktivitäten</span>
+        </div>
+      </a>
+      <button class="icon-btn icon-btn--danger trip-card__delete" type="button" data-delete="Island-Roadtrip" aria-label="Reise „Island-Roadtrip“ löschen">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </article>
+
+    <article class="card trip-card" data-od-id="trip-card-hamburg">
+      <a class="trip-card__link" href="tagesplan.html" data-od-id="trip-link-hamburg">
+        <h3 class="trip-card__title">Wochenende Hamburg</h3>
+        <p class="trip-card__dates">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          20. März – 22. März 2026
+        </p>
+        <div class="trip-card__meta">
+          <span class="badge">3 Tage</span>
+          <span class="badge">6 Aktivitäten</span>
+        </div>
+      </a>
+      <button class="icon-btn icon-btn--danger trip-card__delete" type="button" data-delete="Wochenende Hamburg" aria-label="Reise „Wochenende Hamburg“ löschen">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </article>
+  </div>
+
+  <div class="empty-state" id="empty-state" hidden data-od-id="empty-state">
+    <span class="empty-state__icon" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+    </span>
+    <h2>Noch keine Reisen</h2>
+    <p>Lege deine erste Reise an, um Tagesplan, Budget und Packliste zu verwalten.</p>
+    <button class="btn btn--primary" id="btn-new-trip-empty">Neue Reise</button>
+  </div>
+</main>
+
+<!-- Dialog: Neue Reise -->
+<div class="modal-overlay" id="modal-new" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="new-trip-title">
+    <div class="modal__head">
+      <h2 class="modal__title" id="new-trip-title">Neue Reise</h2>
+      <button class="icon-btn modal__close" type="button" data-close aria-label="Schließen">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <form id="form-new-trip" novalidate>
+      <div class="field">
+        <label class="field__label" for="new-ziel">Ziel</label>
+        <input class="input" type="text" id="new-ziel" placeholder="z. B. Lissabon" required>
+        <p class="field-error" id="err-ziel" hidden>Bitte gib ein Ziel an.</p>
+      </div>
+      <div class="field">
+        <label class="field__label" for="new-start">Startdatum</label>
+        <input class="input" type="date" id="new-start" required>
+        <p class="field-error" id="err-start" hidden>Bitte wähle ein Startdatum.</p>
+      </div>
+      <div class="field">
+        <label class="field__label" for="new-end">Enddatum</label>
+        <input class="input" type="date" id="new-end" required>
+        <p class="field-error" id="err-end" hidden>Das Enddatum liegt vor dem Startdatum. Bitte korrigieren.</p>
+      </div>
+      <div class="modal__actions">
+        <button class="btn btn--secondary" type="button" data-close>Abbrechen</button>
+        <button class="btn btn--primary" type="submit">Reise anlegen</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Dialog: Reise löschen -->
+<div class="modal-overlay" id="modal-delete" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="delete-trip-title">
+    <div class="modal__head">
+      <h2 class="modal__title" id="delete-trip-title">Reise löschen?</h2>
+      <button class="icon-btn modal__close" type="button" data-close aria-label="Schließen">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <p>„<strong id="delete-trip-name"></strong>“ wird samt zugehöriger Aktivitäten und Packlisteneinträge dauerhaft entfernt.</p>
+    <div class="modal__actions">
+      <button class="btn btn--secondary" type="button" data-close>Abbrechen</button>
+      <button class="btn btn--danger" type="button" id="btn-confirm-delete">Löschen</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const tripList = document.getElementById('trip-list');
+  const emptyState = document.getElementById('empty-state');
+
+  const modalNew = document.getElementById('modal-new');
+  const modalDelete = document.getElementById('modal-delete');
+  const formNew = document.getElementById('form-new-trip');
+
+  const errZiel = document.getElementById('err-ziel');
+  const errStart = document.getElementById('err-start');
+  const errEnd = document.getElementById('err-end');
+
+  function openModal(modal) {
+    modal.hidden = false;
+    const focusable = modal.querySelector('input, button, select, textarea');
+    if (focusable) focusable.focus();
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(modal) {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+  function closeAll() {
+    closeModal(modalNew);
+    closeModal(modalDelete);
+  }
+
+  document.querySelectorAll('[data-close]').forEach(function (btn) {
+    btn.addEventListener('click', function () { closeAll(); });
+  });
+  [modalNew, modalDelete].forEach(function (m) {
+    m.addEventListener('click', function (e) {
+      if (e.target === m) closeModal(m);
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeAll();
+  });
+
+  document.getElementById('btn-new-trip').addEventListener('click', function () {
+    openModal(modalNew);
+    formNew.reset();
+    clearErrors();
+    document.getElementById('new-ziel').focus();
+  });
+  document.getElementById('btn-new-trip-empty').addEventListener('click', function () {
+    openModal(modalNew);
+    formNew.reset();
+    clearErrors();
+    document.getElementById('new-ziel').focus();
+  });
+
+  function clearErrors() {
+    [errZiel, errStart, errEnd].forEach(function (el) { el.hidden = true; });
+    ['new-ziel', 'new-start', 'new-end'].forEach(function (id) {
+      document.getElementById(id).classList.remove('input--error');
+    });
+  }
+  function markError(input, err) {
+    input.classList.add('input--error');
+    err.hidden = false;
+  }
+
+  function formatDate(iso) {
+    const d = new Date(iso + 'T00:00:00');
+    return d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  }
+  function dateSpan(startIso, endIso) {
+    const start = new Date(startIso + 'T00:00:00');
+    const end = new Date(endIso + 'T00:00:00');
+    const days = Math.round((end - start) / 86400000) + 1;
+    return { label: formatDate(startIso) + ' – ' + formatDate(endIso), days: days };
+  }
+
+  formNew.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearErrors();
+    const zielInput = document.getElementById('new-ziel');
+    const startInput = document.getElementById('new-start');
+    const endInput = document.getElementById('new-end');
+
+    const ziel = zielInput.value.trim();
+    const start = startInput.value;
+    const end = endInput.value;
+    let valid = true;
+
+    if (!ziel) { markError(zielInput, errZiel); valid = false; }
+    if (!start) { markError(startInput, errStart); valid = false; }
+    if (!end) { markError(endInput, errEnd); valid = false; }
+    if (start && end && end < start) { markError(endInput, errEnd); valid = false; }
+    if (!valid) return;
+
+    const span = dateSpan(start, end);
+    const id = 'trip-' + Date.now();
+    const card = document.createElement('article');
+    card.className = 'card trip-card';
+    card.setAttribute('data-od-id', 'trip-card-' + id);
+    card.innerHTML =
+      '<a class="trip-card__link" href="tagesplan.html">' +
+        '<h3 class="trip-card__title"></h3>' +
+        '<p class="trip-card__dates"></p>' +
+        '<div class="trip-card__meta">' +
+          '<span class="badge"></span>' +
+          '<span class="badge">0 Aktivitäten</span>' +
+        '</div>' +
+      '</a>' +
+      '<button class="icon-btn icon-btn--danger trip-card__delete" type="button" aria-label="Reise löschen">' +
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+      '</button>';
+    card.querySelector('.trip-card__title').textContent = ziel;
+    card.querySelector('.trip-card__dates').textContent = span.label;
+    card.querySelector('.trip-card__meta .badge').textContent = span.days + ' Tage';
+    card.querySelector('.trip-card__delete').addEventListener('click', function () {
+      openDelete(ziel, card);
+    });
+    tripList.appendChild(card);
+    emptyState.hidden = true;
+    closeModal(modalNew);
+  });
+
+  function openDelete(name, card) {
+    document.getElementById('delete-trip-name').textContent = name;
+    openModal(modalDelete);
+    document.getElementById('btn-confirm-delete').onclick = function () {
+      card.remove();
+      closeModal(modalDelete);
+      if (tripList.querySelectorAll('.trip-card').length === 0) {
+        emptyState.hidden = false;
+      }
+    };
+  }
+
+  tripList.querySelectorAll('.trip-card__delete').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const card = btn.closest('.trip-card');
+      const name = btn.getAttribute('data-delete');
+      openDelete(name, card);
+    });
+  });
+})();
+</script>
+</body>
+</html>
