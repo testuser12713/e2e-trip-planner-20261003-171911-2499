@@ -1,0 +1,78 @@
+/* =========================================================
+   Reiseplaner — Reiseliste (Feature-spezifische Styles)
+   Ergänzt die globalen Design-Tokens aus global.css.
+   ========================================================= */
+
+.page-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.page-head h1 {
+  margin-bottom: var(--space-0);
+}
+
+.trip-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .trip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  .trip-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.trip-card {
+  position: relative;
+  display: block;
+}
+
+.trip-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.trip-card__link:hover {
+  color: inherit;
+}
+
+.trip-card__title {
+  font-size: 20px;
+  margin-bottom: var(--space-1);
+  padding-right: 96px;
+}
+
+.trip-card__dates {
+  color: var(--color-muted);
+  font-size: 14px;
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.trip-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.trip-card__actions {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  display: flex;
+  gap: var(--space-0);
+}
