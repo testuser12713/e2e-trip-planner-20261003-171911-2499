@@ -104,7 +104,7 @@ describe('saveTripsData / loadTripsData round trip', () => {
         { id: 't1', destination: 'Lissabon', startDate: '2026-05-12', endDate: '2026-05-19' },
       ],
       activities: [
-        { id: 'a1', tripId: 't1', time: '10:00', place: 'Ort', cost: 5, category: 'transport' },
+        { id: 'a1', tripId: 't1', date: '2026-05-12', time: '10:00', place: 'Ort', cost: 5, category: 'transport' },
       ],
       packingItems: [{ id: 'p1', tripId: 't1', name: 'Pass', packed: true }],
     };

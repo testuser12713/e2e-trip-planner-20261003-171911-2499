@@ -3,7 +3,7 @@ import { getDailyTotal, getDaysBetween, sortActivitiesByTime } from '../dates';
 import type { Activity } from '../../types';
 
 function activity(id: string, time: string, cost: number): Activity {
-  return { id, tripId: 't1', time, place: 'Ort', cost, category: 'sonstiges' };
+  return { id, tripId: 't1', date: '2026-05-12', time, place: 'Ort', cost, category: 'sonstiges' };
 }
 
 describe('getDaysBetween', () => {

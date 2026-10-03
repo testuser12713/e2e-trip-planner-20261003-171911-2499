@@ -77,6 +77,7 @@ export function TripsProvider({ children }: { children: ReactNode }) {
       const activity: Activity = {
         id: createId('activity'),
         tripId,
+        date: draft.date,
         time: draft.time,
         place: draft.place,
         cost: draft.cost,
@@ -93,6 +94,7 @@ export function TripsProvider({ children }: { children: ReactNode }) {
           activity.id === id
             ? {
                 ...activity,
+                date: draft.date,
                 time: draft.time,
                 place: draft.place,
                 cost: draft.cost,
