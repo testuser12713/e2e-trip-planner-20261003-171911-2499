@@ -1,0 +1,102 @@
+/* Day plan — Tagesplan layout (tokens from DESIGN.md, styles mirror design/mockups) */
+
+.section {
+  margin-bottom: var(--space-4);
+}
+
+.plan__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.day {
+  margin-bottom: var(--space-4);
+}
+
+.day__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.day__title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.day__total {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.activity {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.activity__time {
+  flex: 0 0 48px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-accent);
+  padding-top: 1px;
+}
+
+.activity__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.activity__name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.activity__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+  margin-top: var(--space-1);
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.activity__cost {
+  font-weight: 600;
+  color: var(--color-fg);
+}
+
+.activity__actions {
+  display: flex;
+  gap: var(--space-0);
+  flex: 0 0 auto;
+}
+
+.activity__actions .icon-btn {
+  width: 40px;
+  height: 40px;
+}
+
+.day__empty {
+  padding: var(--space-3);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-muted);
+  font-size: 14px;
+  text-align: center;
+}

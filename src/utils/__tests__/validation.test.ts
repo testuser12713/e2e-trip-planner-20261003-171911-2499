@@ -43,6 +43,7 @@ describe('validateTrip', () => {
 
 describe('validateActivity', () => {
   const valid: ActivityDraft = {
+    date: '2026-05-12',
     time: '10:15',
     place: 'Museum besuchen',
     cost: 12,
@@ -53,6 +54,10 @@ describe('validateActivity', () => {
     expect(validateActivity(valid)).toEqual({});
   });
 
+  it('reports a missing date', () => {
+    expect(validateActivity({ ...valid, date: '' }).date).toBeTruthy();
+  });
+
   it('reports a missing time', () => {
     expect(validateActivity({ ...valid, time: '' }).time).toBeTruthy();
   });
@@ -61,12 +66,28 @@ describe('validateActivity', () => {
     expect(validateActivity({ ...valid, place: '  ' }).place).toBeTruthy();
   });
 
+  it('reports a place longer than 120 characters', () => {
+    expect(validateActivity({ ...valid, place: 'a'.repeat(121) }).place).toBeTruthy();
+  });
+
+  it('accepts a place of exactly 120 characters', () => {
+    expect(validateActivity({ ...valid, place: 'a'.repeat(120) })).toEqual({});
+  });
+
   it('reports a negative cost', () => {
     expect(validateActivity({ ...valid, cost: -1 }).cost).toBeTruthy();
   });
 
   it('reports a non-finite cost', () => {
     expect(validateActivity({ ...valid, cost: Number.NaN }).cost).toBeTruthy();
+  });
+
+  it('reports a cost with more than two decimal places', () => {
+    expect(validateActivity({ ...valid, cost: 12.345 }).cost).toBeTruthy();
+  });
+
+  it('accepts a cost with exactly two decimal places', () => {
+    expect(validateActivity({ ...valid, cost: 12.34 })).toEqual({});
   });
 
   it('reports an unknown category', () => {

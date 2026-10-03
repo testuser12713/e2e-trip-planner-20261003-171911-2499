@@ -15,6 +15,7 @@ export interface Trip {
 export interface Activity {
   id: string;
   tripId: string;
+  date: string;
   time: string;
   place: string;
   cost: number;
@@ -35,6 +36,7 @@ export interface TripDraft {
 }
 
 export interface ActivityDraft {
+  date: string;
   time: string;
   place: string;
   cost: number;

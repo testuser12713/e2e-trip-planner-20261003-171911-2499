@@ -3,7 +3,7 @@ import { getBudgetByCategory } from '../budget';
 import type { Activity, Category } from '../../types';
 
 function activity(id: string, category: Category, cost: number): Activity {
-  return { id, tripId: 't1', time: '10:00', place: 'Ort', cost, category };
+  return { id, tripId: 't1', date: '2026-05-12', time: '10:00', place: 'Ort', cost, category };
 }
 
 describe('getBudgetByCategory', () => {

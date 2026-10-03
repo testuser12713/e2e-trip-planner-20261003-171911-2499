@@ -30,14 +30,21 @@ export function validateTrip(draft: TripDraft): Record<string, string> {
 export function validateActivity(draft: ActivityDraft): Record<string, string> {
   const errors: Record<string, string> = {};
 
+  if (!draft.date) {
+    errors.date = 'Bitte wähle einen Tag.';
+  }
   if (!draft.time) {
     errors.time = 'Bitte gib eine Uhrzeit an.';
   }
   if (!draft.place || !draft.place.trim()) {
-    errors.place = 'Bitte benenne die Aktivität.';
+    errors.place = 'Bitte gib einen Ort an.';
+  } else if (draft.place.trim().length > 120) {
+    errors.place = 'Der Ort darf höchstens 120 Zeichen lang sein.';
   }
   if (typeof draft.cost !== 'number' || !Number.isFinite(draft.cost) || draft.cost < 0) {
     errors.cost = 'Bitte gib einen gültigen Betrag ein.';
+  } else if (Math.round((draft.cost + Number.EPSILON) * 100) / 100 !== draft.cost) {
+    errors.cost = 'Bitte gib höchstens zwei Nachkommastellen an.';
   }
   if (!CATEGORY_VALUES.includes(draft.category)) {
     errors.category = 'Bitte wähle eine Kategorie.';
